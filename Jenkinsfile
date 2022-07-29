@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'Hello World'
-                sh 'node --version'
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
     }
