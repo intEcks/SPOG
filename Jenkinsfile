@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'Hello World'
                 sh 'node --version'
             }
         }
