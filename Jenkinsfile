@@ -8,9 +8,9 @@ pipeline {
             }
         }
         stage('deploy') {
-            agent { docker { image 'nginx:apline' } }
             steps {
-                sh 'rm -rf ./*'
+                sh 'npm install -g serve'
+                sh 'serve -s build'
             }
         }
     }
