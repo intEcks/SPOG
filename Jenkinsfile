@@ -8,8 +8,8 @@ pipeline {
             }
         }
         stage('deploy') {
+            agent { docker { image 'nginx:apline' } }
             steps {
-                container('nginx:apline')
                 sh 'rm -rf ./*'
             }
         }
