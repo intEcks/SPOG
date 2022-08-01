@@ -10,6 +10,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
+                sh 'docker exec -u 0 -it mycontainer bash'
                 sh 'npm install -g serve'
                 sh 'serve -s build'
             }
