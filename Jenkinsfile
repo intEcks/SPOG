@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
+                sh 'export HOME=/tmp ;  npm config set cache /tmp'
                 sh 'npm install'
                 sh 'npm run build'
             }
