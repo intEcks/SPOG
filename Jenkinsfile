@@ -3,8 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'docker build -t react-nginx .'
-                sh 'docker run --rm -it -p 8080:80 react-nginx'
+                sh 'npm install'
+                sh 'npm run build'
+            }
+        }
+        stage('deploy') {
+            steps {
+                container('nginx:apline')
+                sh 'rm -rf ./*'
             }
         }
     }
