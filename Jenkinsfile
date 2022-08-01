@@ -1,5 +1,6 @@
 pipeline {
-    agent { docker { image 'node:16.13.1-alpine' } }
+    agent { docker { image 'node:16.13.1-alpine'
+                     args '-u root:sudo -v $HOME/workspace/SPOG_master' } }
     stages {
         stage('build') {
             steps {
